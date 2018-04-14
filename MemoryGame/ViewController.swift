@@ -69,12 +69,8 @@ class ViewController: UIViewController {
     func showGameOverAlert() {
         let alert = UIAlertController(title: "Parabéns", message: "Você concluiu o jogo com \(points) pontos", preferredStyle: .alert)
         
-        alert.addAction(UIAlertAction(title: "Jogar novamente", style: .default, handler: { (action) in                    
-            self.moves        = 0
-            self.points       = 0
-            self.foundedCards = [false, false, false, false, false, false, false, false]
-            self.movesLabel.text = "Pontos: \(self.points)"
-            self.cardPosition = nil
+        alert.addAction(UIAlertAction(title: "Jogar novamente", style: .default, handler: { (action) in
+            self.initalSetup()
             self.setDefault()
         }))
         
@@ -83,6 +79,14 @@ class ViewController: UIViewController {
         }))
         
         present(alert, animated: true)
+    }
+    
+    func initalSetup() {
+        self.moves        = 0
+        self.points       = 0
+        self.foundedCards = [false, false, false, false, false, false, false, false]
+        self.movesLabel.text = "Pontos: \(self.points)"
+        self.cardPosition = nil
     }
     
     func didFinishedGame() -> Bool{
