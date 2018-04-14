@@ -15,10 +15,10 @@ class ViewController: UIViewController {
     @IBOutlet var cards: [UIButton]!
     
     var userName     = ""
-    var emoticons    = ["😎", "🤓", "😎", "😇", "😇", "🤓", "😆", "😆"].shuffled()
+    var emoticons    = ["😎", "🤓", "😎", "😇", "😇", "🤓", "😆", "😆", "👹", "👹", "👻", "👻"].shuffled()
     var moves        = 0
     var points       = 0
-    var foundedCards = [false, false, false, false, false, false, false, false]
+    var foundedCards = [false, false, false, false, false, false, false, false, false, false, false, false]
     var cardPosition: Int?
     
     override func viewDidLoad() {
@@ -84,13 +84,13 @@ class ViewController: UIViewController {
     func initalSetup() {
         self.moves        = 0
         self.points       = 0
-        self.foundedCards = [false, false, false, false, false, false, false, false]
+        self.foundedCards = [false, false, false, false, false, false, false, false, false, false, false, false]
         self.movesLabel.text = "Pontos: \(self.points)"
         self.cardPosition = nil
     }
     
     func didFinishedGame() -> Bool{
-        return foundedCards == [true, true, true, true, true, true, true, true]
+        return foundedCards == [true, true, true, true, true, true, true, true, true, true, true, true]
     }
     
     func setDefault() {
