@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0499E14A20824473006507EF /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0499E14920824473006507EF /* HomeViewController.swift */; };
+		0499E14E20825E60006507EF /* MutableCollectionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0499E14D20825E60006507EF /* MutableCollectionExtension.swift */; };
+		0499E15020825E79006507EF /* SequenceExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0499E14F20825E79006507EF /* SequenceExtension.swift */; };
 		04A4129E2081941C0091F48E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A4129D2081941C0091F48E /* AppDelegate.swift */; };
 		04A412A02081941C0091F48E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A4129F2081941C0091F48E /* ViewController.swift */; };
 		04A412A32081941C0091F48E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04A412A12081941C0091F48E /* Main.storyboard */; };
@@ -17,6 +19,8 @@
 
 /* Begin PBXFileReference section */
 		0499E14920824473006507EF /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		0499E14D20825E60006507EF /* MutableCollectionExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MutableCollectionExtension.swift; sourceTree = "<group>"; };
+		0499E14F20825E79006507EF /* SequenceExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SequenceExtension.swift; sourceTree = "<group>"; };
 		04A4129A2081941C0091F48E /* MemoryGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemoryGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04A4129D2081941C0091F48E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04A4129F2081941C0091F48E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -46,6 +50,15 @@
 			path = Support;
 			sourceTree = "<group>";
 		};
+		0499E14C20825E4A006507EF /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				0499E14D20825E60006507EF /* MutableCollectionExtension.swift */,
+				0499E14F20825E79006507EF /* SequenceExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		04A412912081941C0091F48E = {
 			isa = PBXGroup;
 			children = (
@@ -65,6 +78,7 @@
 		04A4129C2081941C0091F48E /* MemoryGame */ = {
 			isa = PBXGroup;
 			children = (
+				0499E14C20825E4A006507EF /* Extensions */,
 				0499E14B20824489006507EF /* Support */,
 				04A4129F2081941C0091F48E /* ViewController.swift */,
 				0499E14920824473006507EF /* HomeViewController.swift */,
@@ -146,7 +160,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0499E14E20825E60006507EF /* MutableCollectionExtension.swift in Sources */,
 				04A412A02081941C0091F48E /* ViewController.swift in Sources */,
+				0499E15020825E79006507EF /* SequenceExtension.swift in Sources */,
 				04A4129E2081941C0091F48E /* AppDelegate.swift in Sources */,
 				0499E14A20824473006507EF /* HomeViewController.swift in Sources */,
 			);

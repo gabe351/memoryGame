@@ -14,11 +14,11 @@ class ViewController: UIViewController {
     @IBOutlet weak var movesLabel: UILabel!
     @IBOutlet var cards: [UIButton]!
     
-    
-    var userName      = ""
-    let emoticons    = ["😎", "🤓", "😎", "🤓"]
+    var userName     = ""
+    var emoticons    = ["😎", "🤓", "😎", "😇", "😇", "🤓", "😆", "😆"].shuffled()
     var moves        = 0
-    var foundedCards = [false, false, false, false]
+    var points       = 0
+    var foundedCards = [false, false, false, false, false, false, false, false]
     var cardPosition: Int?
     
     override func viewDidLoad() {
@@ -32,13 +32,8 @@ class ViewController: UIViewController {
         self.navigationController?.isNavigationBarHidden = false
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-    }
-    
     @IBAction func buttonDidTapped(_ sender: UIButton) {
         checkCards()
-        
         
         for index in cards.indices {
             if sender == cards[index] {
@@ -53,16 +48,45 @@ class ViewController: UIViewController {
                         if firstCard.titleLabel?.text == secondCard.titleLabel?.text {
                             foundedCards[index]    = true
                             foundedCards[position] = true
+                            points += 2
+                        } else {
+                            points = points - 1
                         }
                         
                     } else {
                         cardPosition = index
                     }
                 }
+                movesLabel.text = "Pontos: \(points)"
                 
-                
+                if didFinishedGame() {
+                    showGameOverAlert()
+                }
             }
         }
+    }
+    
+    func showGameOverAlert() {
+        let alert = UIAlertController(title: "Parabéns", message: "Você concluiu o jogo com \(points) pontos", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Jogar novamente", style: .default, handler: { (action) in                    
+            self.moves        = 0
+            self.points       = 0
+            self.foundedCards = [false, false, false, false, false, false, false, false]
+            self.movesLabel.text = "Pontos: \(self.points)"
+            self.cardPosition = nil
+            self.setDefault()
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Voltar para tela principal", style: .cancel, handler: { (action) in
+            self.navigationController?.popViewController(animated: true)
+        }))
+        
+        present(alert, animated: true)
+    }
+    
+    func didFinishedGame() -> Bool{
+        return foundedCards == [true, true, true, true, true, true, true, true]
     }
     
     func setDefault() {
